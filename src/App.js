@@ -55,7 +55,6 @@ function App() {
       </div>
 
       <div className="logo-container">
-        asdad
         <img src={logo} alt="Logo" />
       </div>
 
