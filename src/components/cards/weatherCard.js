@@ -27,35 +27,68 @@ function WeatherCard({ weatherInfo, isSelected, onClick }) {
     'broken clouds': 'Broken_Clouds.png',
     'overcast clouds': 'Light_Ran.png',
   };
-
+  const weatherIcons = {
+    'clear sky': 'clear_sky_icon.png',
+    mist: 'mist_icon.png',
+    'few clouds': 'few_clouds_icon.png',
+    'broken clouds': 'broken_clouds_icon.png',
+    'overcast clouds': 'light_rain_icon.png',
+  };
   const weatherImage = weatherImageMapping[description] || 'Mist.png';
+  const weatherIcon = weatherIcons[description] || 'Mist.png';
 
   return (
     <Card
+      style={{ background: '#383b47' }}
       className={`weather-card ${isSelected ? 'selected' : ''}`}
       onClick={onClick}
     >
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Weather Icon"
-          height="100"
-          image={require(`../../assets/${weatherImage}`)}
-        />
-        <CardContent>
-          <Typography variant="h5" component="div">
-            {name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+        <div className="card-media-container">
+          <img
+            className="card-media"
+            src={require(`../../assets/${weatherImage}`)}
+            alt="Weather Icon"
+          />
+          <div className="card-name-overlay">
+            <Typography
+              variant="h6"
+              component="div"
+              style={{ fontWeight: 'bold' }}
+            >
+              {name}
+            </Typography>
+          </div>
+          <div className="card-temp-overlay">
+            <Typography variant="h5" component="div">
+              {temp}°C
+            </Typography>
+          </div>
+          <div className="card-icons-overlay">
+            <Typography variant="h8" component="div">
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img
+                  src={require(`../../assets/${weatherIcon}`)}
+                  alt="Weather Icon"
+                  style={{ marginRight: '10px' }}
+                />
+                <div>{description}</div>
+              </div>
+            </Typography>
+          </div>
+        </div>
+
+        <CardContent style={{ background: '#383b47' }}>
+          {/* <Typography variant="body2" color="#e5e1e1">
             Description: {description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+          </Typography> */}
+          {/* <Typography variant="body2" color="#e5e1e1">
             Temperature: {temp}°C
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+          </Typography> */}
+          <Typography variant="body2" color="#e5e1e1">
             Last Update: {formattedDate} at {formattedTime}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="#e5e1e1">
             ID: {id}
           </Typography>
         </CardContent>
