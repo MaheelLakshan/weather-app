@@ -3,6 +3,16 @@
   position: relative;
   background-color: #1f2128;
 }
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+.logo-container img {
+  margin: 30px;
+  width: 15%;
+  height: 15%;
+  z-index: 2;
+}
 
 .background-image {
   /* Set the background image properties */
@@ -30,6 +40,6 @@
   z-index: 1;
 }
 
-.cards {
+/* .cards {
   padding-top: 100px;
-}
+} */

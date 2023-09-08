@@ -3,6 +3,7 @@ import data from './data/cities.json';
 import { fetchWeatherData } from './services/apiServices'; // Import the API function
 import WeatherCard from './components/cards/weatherCard'; // Ensure proper casing
 import background from './assets/1 Dashboard - 1200px.png';
+import logo from './assets/Logo.png';
 import { Button } from '@mui/material';
 import './App.css';
 
@@ -49,31 +50,35 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="cards">
-        <div className="background-image">
-          <img src={background} alt="Background" />
-        </div>
-        <div className="weather-cards">
-          {weatherData.map((weatherInfo, index) => (
-            <WeatherCard
-              key={index}
-              weatherInfo={weatherInfo}
-              isSelected={selectedCard === index}
-              onClick={() => handleCardClick(index)}
-            />
-          ))}
-          {selectedCard !== null && (
-            <div className="back-button">
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleBackClick}
-              >
-                Back
-              </Button>
-            </div>
-          )}
-        </div>
+      <div className="background-image">
+        <img src={background} alt="Background" />
+      </div>
+
+      <div className="logo-container">
+        asdad
+        <img src={logo} alt="Logo" />
+      </div>
+
+      <div className="weather-cards">
+        {weatherData.map((weatherInfo, index) => (
+          <WeatherCard
+            key={index}
+            weatherInfo={weatherInfo}
+            isSelected={selectedCard === index}
+            onClick={() => handleCardClick(index)}
+          />
+        ))}
+        {selectedCard !== null && (
+          <div className="back-button">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleBackClick}
+            >
+              Back
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
