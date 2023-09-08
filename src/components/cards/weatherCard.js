@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardMedia,
-  CardActionArea,
-  Button,
-} from '@mui/material';
+import React from 'react';
+import { Card, CardContent, Typography, CardActionArea } from '@mui/material';
 import './weatherCard.css';
 
 function WeatherCard({ weatherInfo, isSelected, onClick }) {
@@ -35,7 +28,7 @@ function WeatherCard({ weatherInfo, isSelected, onClick }) {
     'overcast clouds': 'light_rain_icon.png',
   };
   const weatherImage = weatherImageMapping[description] || 'Mist.png';
-  const weatherIcon = weatherIcons[description] || 'Mist.png';
+  const weatherIcon = weatherIcons[description] || 'mist_icon.png';
 
   return (
     <Card

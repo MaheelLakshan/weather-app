@@ -3,12 +3,15 @@ import data from './data/cities.json';
 import { fetchWeatherData } from './services/apiServices'; // Import the API function
 import WeatherCard from './components/cards/weatherCard'; // Ensure proper casing
 import background from './assets/1 Dashboard - 1200px.png';
+import PopUpCard from './components/popUp/PopUpCard';
 import logo from './assets/Logo.png';
 import { Button } from '@mui/material';
 import './App.css';
 
 function App() {
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+
   const cityCodes = data.List.map((city) => city.CityCode);
 
   const [weatherData, setWeatherData] = useState([]);
@@ -41,11 +44,13 @@ function App() {
   }, []);
 
   const handleCardClick = (index) => {
-    setSelectedCard(index);
+    setSelectedCardIndex(index);
+    setSelectedCardData(weatherData[index]);
   };
 
   const handleBackClick = () => {
-    setSelectedCard(null);
+    setSelectedCardIndex(null);
+    setSelectedCardData(null);
   };
 
   return (
@@ -59,23 +64,22 @@ function App() {
       </div>
 
       <div className="weather-cards">
-        {weatherData.map((weatherInfo, index) => (
-          <WeatherCard
-            key={index}
-            weatherInfo={weatherInfo}
-            isSelected={selectedCard === index}
-            onClick={() => handleCardClick(index)}
-          />
-        ))}
-        {selectedCard !== null && (
+        {!selectedCardData &&
+          weatherData.map((weatherInfo, index) => (
+            <WeatherCard
+              key={index}
+              weatherInfo={weatherInfo}
+              isSelected={selectedCardIndex === index}
+              onClick={() => handleCardClick(index)}
+            />
+          ))}
+
+        {selectedCardData && (
           <div className="back-button">
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleBackClick}
-            >
-              Back
-            </Button>
+            <PopUpCard
+              selectedCardData={selectedCardData}
+              onClose={handleBackClick}
+            />
           </div>
         )}
       </div>
