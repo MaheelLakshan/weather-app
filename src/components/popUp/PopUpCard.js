@@ -80,18 +80,42 @@ function PopUpCard({ selectedCardData, onClose }) {
                   style={{ marginRight: '10px' }}
                 />
               </div>
-              <div>{description}</div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {description}
+              </div>
             </Typography>
           </div>
         </div>
 
         <CardContent>
-          <Typography variant="body1" className="body-text" color="#e5e1e1">
-            Last Update: {new Date(dt * 1000).toLocaleString()}
-          </Typography>
-          <Typography variant="body1" className="body-text" color="#e5e1e1">
-            ID: {id}
-          </Typography>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Typography variant="body1" className="body-text" color="#e5e1e1">
+              Last Update: {new Date(dt * 1000).toLocaleString()}
+            </Typography>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Typography variant="body1" className="body-text" color="#e5e1e1">
+              ID: {id}
+            </Typography>
+          </div>
         </CardContent>
       </Card>
     </div>
