@@ -5,7 +5,6 @@ import WeatherCard from './components/cards/weatherCard'; // Ensure proper casin
 import background from './assets/1 Dashboard - 1200px.png';
 import PopUpCard from './components/popUp/PopUpCard';
 import logo from './assets/Logo.png';
-import { Button } from '@mui/material';
 import './App.css';
 
 function App() {
@@ -75,7 +74,7 @@ function App() {
           ))}
 
         {selectedCardData && (
-          <div className="back-button">
+          <div>
             <PopUpCard
               selectedCardData={selectedCardData}
               onClose={handleBackClick}

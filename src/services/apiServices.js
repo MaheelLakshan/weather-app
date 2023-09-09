@@ -6,6 +6,7 @@ const units = 'metric';
 export const fetchWeatherData = async (cityCodes) => {
   const promises = cityCodes.map(async (cityCode) => {
     const apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${cityCode}&units=${units}&appid=${apiKey}`;
+    http://api.openweathermap.org/data/2.5/weather?id=${cityCode}&units=metric&appid=635ed7741cfe41bd3522e449647baa4e
     try {
       const response = await axios.get(apiUrl);
 

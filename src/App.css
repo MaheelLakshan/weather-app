@@ -70,16 +70,17 @@
   padding: 20px;
   border-radius: 10px;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 /* .cards {
   padding-top: 100px;
 } */
-.back-button {
+/* .back-button {
   text-align: center;
   margin-top: 20px;
 }
 
 .back-button button {
   font-size: 16px;
-}
+} */
