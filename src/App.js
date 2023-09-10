@@ -7,6 +7,7 @@ import PopUpCard from './components/popUp/PopUpCard';
 import logo from './assets/Logo.png';
 import './App.css';
 
+
 function App() {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [selectedCardData, setSelectedCardData] = useState(null);
