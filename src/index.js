@@ -1,3 +1,4 @@
+// import 'dotenv/config';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -6,9 +7,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  //Wrapping <React.StrictMode> was remove since in react 18 it was render twice. mount and Unmount. However in
+
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function

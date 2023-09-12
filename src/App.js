@@ -7,7 +7,6 @@ import PopUpCard from './components/popUp/PopUpCard';
 import logo from './assets/Logo.png';
 import './App.css';
 
-
 function App() {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [selectedCardData, setSelectedCardData] = useState(null);
@@ -30,6 +29,7 @@ function App() {
 
     // Fetch fresh data if cache is expired or doesn't exist
     const weatherResults = await fetchWeatherData(cityCodes);
+
     setWeatherData(weatherResults);
 
     // Cache the data with a timestamp
@@ -63,7 +63,14 @@ function App() {
         <img src={logo} alt="Logo" />
       </div>
 
-      <div className="weather-cards">
+      <div
+        className={`${
+          selectedCardIndex != null
+            ? 'weather-card-container'
+            : 'weather-card-container-twoColumn'
+        }`}
+      >
+        {/* <div className="weather-card-container">weather-cards */}
         {!selectedCardData &&
           weatherData.map((weatherInfo, index) => (
             <WeatherCard
