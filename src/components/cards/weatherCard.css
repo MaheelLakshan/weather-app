@@ -1,11 +1,7 @@
 .weather-card {
   width: 350px;
   height: 200px;
-  /* margin: 4px; */
-  /* padding: 10px; */
-  /* background-color: rgba(0, 0, 0, 0.1); */
   border-radius: 10px;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   cursor: pointer;
   transition: transform 0.2s;
   z-index: 1;
@@ -56,4 +52,28 @@
   justify-content: center;
   color: #fff;
   text-align: center;
+}
+@media (max-width: 400px) {
+  .card-name-overlay {
+    position: absolute;
+    top: 10%;
+    left: 20px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+
+  .card-temp-overlay {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    color: #fff;
+  }
+
+  .card-icons-overlay {
+    display: none;
+  }
 }

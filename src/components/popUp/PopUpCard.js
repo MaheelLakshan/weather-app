@@ -1,30 +1,15 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
 import './PopUpCard.css'; // Import the CSS file
+import { WEATHER_ICONS, SELECTCARD } from '../../Constants/Constant';
 
 function PopUpCard({ selectedCardData, onClose }) {
   const { name, main, weather, dt, id } = selectedCardData;
   const description = weather[0].description;
   const temp = main.temp;
 
-  const selectCard = {
-    'clear sky': 'Clear_Sky_Popup.png',
-    mist: 'Mist_Popup.png',
-    'few clouds': 'Few_Clouds_Popup.png',
-    'broken clouds': 'Broken_Clouds_Popup.png',
-    'overcast clouds': 'Light_Ran_Popup.png',
-  };
-
-  const weatherIcons = {
-    'clear sky': 'clear_sky_icon.png',
-    mist: 'mist_icon.png',
-    'few clouds': 'few_clouds_icon.png',
-    'broken clouds': 'broken_clouds_icon.png',
-    'overcast clouds': 'light_rain_icon.png',
-  };
-
-  const selectImage = selectCard[description] || 'Mist_Popup.png';
-  const weatherIcon = weatherIcons[description] || 'mist_icon.png';
+  const selectImage = SELECTCARD[description] || 'Mist_Popup.png';
+  const weatherIcon = WEATHER_ICONS[description] || 'mist_icon.png';
 
   return (
     <div className="popup-container">

@@ -3,21 +3,16 @@
   background-color: #1f2128;
 }
 .weather-card-container {
-  display: grid;
-  gap: 10px; /* Adjust the gap between cards as needed */
-  justify-content: center; /* Center the grid horizontally */
-  align-items: center; /* Center the grid vertically */
+  display: flex;
   margin-top: 50px;
   padding: 0 auto; /* Equal padding on the left and right of the container */
 }
 
 .weather-card-container-twoColumn {
   display: grid;
-  /* height: 800px; */
   grid-template-columns: repeat(2, 350px); /* Two equal-width columns */
   margin-top: 5px;
   padding-bottom: 20px;
-  /* grid-template-rows: repeat(3, 1fr); */
   gap: 20px; /* Adjust the gap between cards as needed */
   justify-content: center; /* Center the grid horizontally */
   align-items: center; /* Center the grid vertically */
@@ -37,18 +32,39 @@
   z-index: 2;
 }
 
-/* viewport is less than or equal to the specified max-width */
-/* @media (max-width: 767px) {
-  .logo-container img {
-    margin: 30px;
-    width: 30%;
+@media (min-width: 801px) {
+  .weather-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
   }
-} */
+}
 
+/* viewport is less than or equal to the specified max-width */
 @media (max-width: 800px) {
   .logo-container img {
     margin: 30px;
-    width: 40%;
+    width: 25%;
+  }
+  .weather-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+  }
+  .weather-card-container-twoColumn {
+    display: grid;
+    margin-top: 5px;
+    padding-bottom: 20px;
+    grid-template-columns: none;
+    justify-content: center; /* Center the grid horizontally */
+    align-items: center; /* Center the grid vertically */
+    padding: 0 10%; /* Equal padding on the left and right of the container */
   }
 }
 
@@ -59,12 +75,7 @@
     width: 25%;
   }
 }
-@media (min-width: 1190px) {
-  .logo-container img {
-    margin: 30px;
-    width: 25%;
-  }
-}
+
 @media (min-width: 1200px) {
   .logo-container img {
     margin: 30px;

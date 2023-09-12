@@ -6,22 +6,27 @@ import background from './assets/1 Dashboard - 1200px.png';
 import PopUpCard from './components/popUp/PopUpCard';
 import logo from './assets/Logo.png';
 import './App.css';
+import { CACHE_KEY, CACHE_TIMEOUT } from './Constants/Constant';
 
 function App() {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [selectedCardData, setSelectedCardData] = useState(null);
+  const [weatherData, setWeatherData] = useState([]);
 
+  // City Codes from JSON data
   const cityCodes = data.List.map((city) => city.CityCode);
 
-  const [weatherData, setWeatherData] = useState([]);
   // Function to fetch and cache weather data
   const fetchAndCacheWeatherData = async () => {
-    const cachedData = localStorage.getItem('weatherData');
+    const cachedData = localStorage.getItem(CACHE_KEY);
     if (cachedData) {
       // Use cached data if it exists and is not expired
       const parsedData = JSON.parse(cachedData);
       const currentTime = new Date().getTime();
-      if (parsedData.timestamp && currentTime - parsedData.timestamp < 300000) {
+      if (
+        parsedData.timestamp &&
+        currentTime - parsedData.timestamp < CACHE_TIMEOUT
+      ) {
         setWeatherData(parsedData.data);
         return;
       }
@@ -76,7 +81,6 @@ function App() {
             <WeatherCard
               key={index}
               weatherInfo={weatherInfo}
-              isSelected={selectedCardIndex === index}
               onClick={() => handleCardClick(index)}
             />
           ))}
