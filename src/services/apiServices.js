@@ -1,11 +1,9 @@
 import axios from 'axios';
-import { UNITS } from '../Constants/Constant';
-
-const apiKey = '635ed7741cfe41bd3522e449647baa4e';
+import { UNITS, API } from '../Constants/Constant';
 
 export const fetchWeatherData = async (cityCodes) => {
   const promises = cityCodes.map(async (cityCode) => {
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${cityCode}&units=${UNITS}&appid=${apiKey}`;
+    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${cityCode}&units=${UNITS}&appid=${API}`;
 
     try {
       const response = await axios.get(apiUrl);

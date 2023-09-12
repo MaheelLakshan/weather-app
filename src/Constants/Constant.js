@@ -1,5 +1,7 @@
 //Api services
 export const UNITS = 'metric';
+//API
+export const API = process.env.REACT_APP_APIURL;
 
 //popUp card details
 export const SELECTCARD = {
@@ -29,8 +31,6 @@ export const WEATHER_IMAGE_MAPPING = {
 };
 
 export const OPTIONS = { year: 'numeric', month: 'long', day: 'numeric' };
-
-
 
 //App.js
 
