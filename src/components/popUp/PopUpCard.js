@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
 import './PopUpCard.css'; // Import the CSS file
-import { WEATHER_ICONS, SELECTCARD } from '../../Constants/Constant';
 import CardBelowContain from '../CardBelowContain/cardBelowContain';
+import * as PopupConstants from '../../Constants/CardConstants';
 
 function PopUpCard({ selectedCardData, onClose }) {
   const { name, main, weather, sys, dt } = selectedCardData;
@@ -11,8 +11,10 @@ function PopUpCard({ selectedCardData, onClose }) {
   const description = weather[0].description;
   const temp = Math.round(main.temp);
   const date = new Date(dt * 1000);
-  const selectImage = SELECTCARD[description] || 'Mist_Popup.png';
-  const weatherIcon = WEATHER_ICONS[description] || 'mist_icon.png';
+  const selectImage =
+    PopupConstants.SELECTCARD[description] || 'Mist_Popup.png';
+  const weatherIcon =
+    PopupConstants.WEATHER_ICONS[description] || 'mist_icon.png';
 
   const formattedDate = date.toLocaleDateString(undefined, {
     month: 'short', // Display month in short form (e.g., "Feb" for February)

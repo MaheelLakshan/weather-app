@@ -7,7 +7,7 @@ import CardAboveContain from '../CardAboveContain/CardAboveContain';
 
 function WeatherCard({ weatherInfo, onClick }) {
   return (
-    <Card style={{ background: '#383b47' }} onClick={onClick}>
+    <Card className="background" onClick={onClick}>
       <CardActionArea>
         <CardAboveContain weatherInfo={weatherInfo} />
         <CardContent style={{ background: '#383b47', margin: '-5px' }}>

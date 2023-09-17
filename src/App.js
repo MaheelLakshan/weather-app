@@ -7,7 +7,8 @@ import PopUpCard from './components/popUp/PopUpCard';
 import Header from './components/Header/Header';
 import SearchSection from './components/SeachSection/SearchSection';
 import './App.css';
-import { CACHE_KEY, CACHE_TIMEOUT } from './Constants/Constant';
+import { CACHE_KEY, CACHE_TIMEOUT } from './Constants/App_Constants';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
@@ -92,6 +93,7 @@ function App() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

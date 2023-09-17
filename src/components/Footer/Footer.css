@@ -1,1 +1,8 @@
 /* footer colour 30333d */
+
+.footer {
+  background-color: #383b47; /* Grey background color */
+  color: #fff; /* Text color */
+  padding: 10px 0; /* Add padding for spacing */
+  text-align: center;
+}

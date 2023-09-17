@@ -1,11 +1,8 @@
 import React from 'react';
 import './CardAboveContain.css';
 import { Typography } from '@mui/material';
-import {
-  WEATHER_IMAGE_MAPPING,
-  WEATHER_ICONS,
-  OPTIONS,
-} from '../../Constants/Constant';
+// import { OPTIONS } from '../../Constants/Constant'; // Import other shared constants
+import * as CardConstants from '../../Constants/CardConstants'; // Import the constants here
 
 function CardAboveContain({ weatherInfo }) {
   const { name, main, weather, dt, id, sys } = weatherInfo;
@@ -25,8 +22,12 @@ function CardAboveContain({ weatherInfo }) {
     minute: '2-digit',
     hour12: true,
   });
-  const weatherImage = WEATHER_IMAGE_MAPPING[description] || 'Mist.png';
-  const weatherIcon = WEATHER_ICONS[description] || 'mist_icon.png';
+  const weatherImage =
+    CardConstants.WEATHER_IMAGE_MAPPING[description] ||
+    CardConstants.WEATHER_IMAGE_DEFAULT;
+  const weatherIcon =
+    CardConstants.WEATHER_ICONS[description] ||
+    CardConstants.WEATHER_ICON_DEFAULT;
   return (
     <div className="card-media-container">
       <img
@@ -46,8 +47,11 @@ function CardAboveContain({ weatherInfo }) {
       </div>
 
       <div className="card-temp-overlay">
-        <span>{temp}°</span>
-        <span style={{ fontSize: '25px' }}>C</span>
+        <span>
+          {temp}
+          {CardConstants.TEMPERATURE_UNIT}
+        </span>
+        <span style={{ fontSize: CardConstants.TEMPERATURE_ICON_SIZE }}>C</span>
       </div>
 
       <div className="card-close-overlay">X</div>
@@ -60,7 +64,11 @@ function CardAboveContain({ weatherInfo }) {
             alignItems: 'center',
           }}
         >
-          Temp Min: <div style={{ marginLeft: '8px' }}>{min_temp}°C</div>
+          Temp Min:{' '}
+          <div style={{ marginLeft: '8px' }}>
+            {min_temp}
+            {CardConstants.TEMPERATURE_UNIT}
+          </div>
         </div>
         <div
           style={{
@@ -69,7 +77,11 @@ function CardAboveContain({ weatherInfo }) {
             alignItems: 'center',
           }}
         >
-          Temp Max: <div style={{ marginLeft: '5px' }}>{max_temp}°C</div>
+          Temp Max:{' '}
+          <div style={{ marginLeft: '5px' }}>
+            {max_temp}
+            {CardConstants.TEMPERATURE_UNIT}
+          </div>
         </div>
       </div>
 

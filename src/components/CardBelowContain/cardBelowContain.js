@@ -1,5 +1,9 @@
 import React from 'react';
 import './cardBelowContain.css';
+import {
+  NAVIGATOR_IMAGE,
+  SEPARATOR_IMAGE,
+} from '../../Constants/CardConstants';
 
 function cardBelowContain({ weatherInfo }) {
   const { main, visibility, wind, sys } = weatherInfo;
@@ -64,7 +68,7 @@ function cardBelowContain({ weatherInfo }) {
           <div className="section-column">
             <div className="section-column-seperation">
               <img
-                src={require(`../../assets/PopUp/separator.png`)}
+                src={SEPARATOR_IMAGE}
                 alt="Weather Icon"
                 // style={{ marginRight: '10px' }}
                 className="section-image"
@@ -78,7 +82,7 @@ function cardBelowContain({ weatherInfo }) {
       <div className="section section2">
         <div className="SecondPiece">
           <img
-            src={require('../../assets/Navigator.png')}
+            src={NAVIGATOR_IMAGE}
             alt="Weather Icon"
             // style={{ marginRight: '10px' }}
             className="section-image"
@@ -92,7 +96,7 @@ function cardBelowContain({ weatherInfo }) {
         <div className="section-content">
           <div className="section-column-seperation">
             <img
-              src={require('../../assets/PopUp/separator.png')}
+              src={SEPARATOR_IMAGE}
               alt="Weather Icon"
               // style={{ marginRight: '10px' }}
               className="section-image"

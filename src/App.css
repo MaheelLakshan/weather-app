@@ -1,11 +1,10 @@
 .app-container {
-  position: relative;
+  position: flex;
   background-color: #1f2128;
 }
 .weather-card-container {
   display: flex;
   margin-top: 50px;
-  padding: 0 auto; /* Equal padding on the left and right of the container */
 }
 
 .weather-card-container-twoColumn {
