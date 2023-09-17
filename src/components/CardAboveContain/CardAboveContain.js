@@ -1,7 +1,6 @@
 import React from 'react';
 import './CardAboveContain.css';
 import { Typography } from '@mui/material';
-// import { OPTIONS } from '../../Constants/Constant'; // Import other shared constants
 import * as CardConstants from '../../Constants/CardConstants'; // Import the constants here
 
 function CardAboveContain({ weatherInfo }) {

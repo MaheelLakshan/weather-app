@@ -23,6 +23,9 @@
 .MiddlePiece {
   font-size: 10px;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .section {
   flex: 1; /* Each section takes equal width */
@@ -61,6 +64,7 @@
 .section2 {
   /* Style for the second section */
   text-align: center;
+  margin-left: 7px;
 }
 
 .centered-image {

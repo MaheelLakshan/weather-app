@@ -5,4 +5,5 @@
   color: #fff; /* Text color */
   padding: 10px 0; /* Add padding for spacing */
   text-align: center;
+  z-index: 2;
 }

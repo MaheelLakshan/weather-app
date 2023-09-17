@@ -2,10 +2,6 @@
   position: flex;
   background-color: #1f2128;
 }
-.weather-card-container {
-  display: flex;
-  margin-top: 50px;
-}
 
 .weather-card-container-twoColumn {
   display: grid;
@@ -16,6 +12,20 @@
   justify-content: center; /* Center the grid horizontally */
   align-items: center; /* Center the grid vertically */
   padding: 0 auto; /* Equal padding on the left and right of the container */
+}
+
+.background-image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 @media (min-width: 801px) {
@@ -51,17 +61,3 @@
 }
 
 /* viewport is greater than or equal to the specified min-width */
-
-.background-image {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.background-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}

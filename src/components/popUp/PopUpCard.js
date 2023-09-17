@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
 import './PopUpCard.css'; // Import the CSS file
 import CardBelowContain from '../CardBelowContain/cardBelowContain';
 import * as PopupConstants from '../../Constants/CardConstants';
+import GlobalContext from '../../Context/GlobalContext';
 
-function PopUpCard({ selectedCardData, onClose }) {
+function PopUpCard() {
+  const { selectedCardData, setSelectedCardData } = useContext(GlobalContext);
   const { name, main, weather, sys, dt } = selectedCardData;
   const min_temp = Math.round(main.temp_min);
   const max_temp = Math.round(main.temp_max);
@@ -26,13 +28,16 @@ function PopUpCard({ selectedCardData, onClose }) {
     minute: '2-digit',
     hour12: true,
   });
+  const handleClose = () => {
+    window.location.href = '/';
+  };
 
   return (
     <div className="popup-container">
       <Card className="card-popup" style={{ background: '#383b47' }}>
         <div className="card-media-container_Popup">
           <div className="close-button card-back-overlay">
-            <Button variant="contained" onClick={onClose}>
+            <Button variant="contained" onClick={handleClose}>
               &lt;
             </Button>
           </div>
