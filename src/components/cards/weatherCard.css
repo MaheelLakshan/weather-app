@@ -1,3 +1,6 @@
+/* 
+
+
 .weather-card {
   width: 350px;
   height: 200px;
@@ -14,66 +17,4 @@
 .weather-card.selected {
   transform: scale(1.05);
   background-color: rgba(0, 0, 0, 0.1);
-}
-
-.card-media-container {
-  position: relative;
-}
-
-.card-media {
-  width: 100%;
-  height: 80%;
-}
-
-.card-name-overlay {
-  position: absolute;
-  top: 30px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-}
-
-.card-temp-overlay {
-  position: absolute;
-  top: 50px;
-  right: 30px;
-  color: #fff;
-}
-
-.card-icons-overlay {
-  position: absolute;
-  bottom: 30px;
-  left: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-}
-@media (max-width: 400px) {
-  .card-name-overlay {
-    position: absolute;
-    top: 10%;
-    left: 20px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-  }
-
-  .card-temp-overlay {
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    color: #fff;
-  }
-
-  .card-icons-overlay {
-    display: none;
-  }
-}
+} */

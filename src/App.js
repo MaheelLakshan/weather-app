@@ -4,7 +4,8 @@ import { fetchWeatherData } from './services/apiServices'; // Import the API fun
 import WeatherCard from './components/cards/weatherCard'; // Ensure proper casing
 import background from './assets/1 Dashboard - 1200px.png';
 import PopUpCard from './components/popUp/PopUpCard';
-import logo from './assets/Logo.png';
+import Header from './components/Header/Header';
+import SearchSection from './components/SeachSection/SearchSection';
 import './App.css';
 import { CACHE_KEY, CACHE_TIMEOUT } from './Constants/Constant';
 
@@ -63,11 +64,8 @@ function App() {
       <div className="background-image">
         <img src={background} alt="Background" />
       </div>
-
-      <div className="logo-container">
-        <img src={logo} alt="Logo" />
-      </div>
-
+      <Header />
+      <SearchSection />
       <div
         className={`${
           selectedCardIndex != null

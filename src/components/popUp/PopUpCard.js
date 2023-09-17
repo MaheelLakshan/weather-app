@@ -2,14 +2,28 @@ import React from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
 import './PopUpCard.css'; // Import the CSS file
 import { WEATHER_ICONS, SELECTCARD } from '../../Constants/Constant';
+import CardBelowContain from '../CardBelowContain/cardBelowContain';
 
 function PopUpCard({ selectedCardData, onClose }) {
-  const { name, main, weather, dt, id } = selectedCardData;
+  const { name, main, weather, sys, dt } = selectedCardData;
+  const min_temp = Math.round(main.temp_min);
+  const max_temp = Math.round(main.temp_max);
   const description = weather[0].description;
-  const temp = main.temp;
-
+  const temp = Math.round(main.temp);
+  const date = new Date(dt * 1000);
   const selectImage = SELECTCARD[description] || 'Mist_Popup.png';
   const weatherIcon = WEATHER_ICONS[description] || 'mist_icon.png';
+
+  const formattedDate = date.toLocaleDateString(undefined, {
+    month: 'short', // Display month in short form (e.g., "Feb" for February)
+    day: 'numeric', // Display day of the month
+  });
+
+  const formattedTime = date.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
 
   return (
     <div className="popup-container">
@@ -26,21 +40,41 @@ function PopUpCard({ selectedCardData, onClose }) {
             src={require(`../../assets/PopUp/${selectImage}`)}
             alt="Weather Icon"
           />
+
           <div className="card-name-overlay_popup">
-            <Typography
-              variant="h4"
-              component="div"
-              style={{ fontWeight: 'bold' }}
-            >
-              {name}
-            </Typography>
+            <div>
+              {name},{sys.country}
+            </div>
+            <div className="card-date-overlay_popup">
+              {formattedTime},{formattedDate}
+            </div>
           </div>
 
           <div className="card-temp-overlay_popup">
-            <Typography variant="h5" component="div">
-              {temp}°C
-            </Typography>
+            <div>{temp}°C</div>
           </div>
+
+          <div className="card-temp_muchdetails-overlay_popUp">
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              Temp Min: <div style={{ marginLeft: '8px' }}>{min_temp}°C</div>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              Temp Max: <div style={{ marginLeft: '5px' }}>{max_temp}°C</div>
+            </div>
+          </div>
+
           <div className="card-seperate-overlay_popup">
             <img
               src={require(`../../assets/PopUp/separator.png`)}
@@ -79,28 +113,7 @@ function PopUpCard({ selectedCardData, onClose }) {
         </div>
 
         <CardContent>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Typography variant="body1" className="body-text" color="#e5e1e1">
-              Last Update: {new Date(dt * 1000).toLocaleString()}
-            </Typography>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Typography variant="body1" className="body-text" color="#e5e1e1">
-              ID: {id}
-            </Typography>
-          </div>
+          <CardBelowContain weatherInfo={selectedCardData} />
         </CardContent>
       </Card>
     </div>

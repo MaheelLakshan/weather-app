@@ -1,0 +1,75 @@
+/* card below section */
+
+.card-details-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.FirstPiece {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.SecondPiece {
+  display: grid;
+  row-gap: 10px;
+  justify-items: center;
+}
+.MiddlePiece {
+  font-size: 10px;
+  color: #ffffff;
+}
+.section {
+  flex: 1; /* Each section takes equal width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row; /* Make columns horizontal */
+  justify-content: end;
+}
+
+.section-column-seperation {
+  /* Style for the image at the end of each section */
+  width: 100%;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-self: center; /* Center the image vertically within the section */
+}
+
+.section1 {
+  /* Style for the first section */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.section2 {
+  /* Style for the second section */
+  text-align: center;
+}
+
+.centered-image {
+  /* Style for centering the image within the section */
+  display: block;
+  margin: 0 auto;
+}
+
+.section3 {
+  /* Style for the third section (similar to the first section) */
+  padding: 0;
+}

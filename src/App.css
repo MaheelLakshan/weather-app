@@ -18,19 +18,6 @@
   align-items: center; /* Center the grid vertically */
   padding: 0 auto; /* Equal padding on the left and right of the container */
 }
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 60px;
-  overflow: hidden;
-}
-.logo-container img {
-  max-width: 100%; /* Ensure the image does not exceed the container's width */
-  max-height: 100%; /* Ensure the image does not exceed the container's height */
-  z-index: 2;
-}
 
 @media (min-width: 801px) {
   .weather-card-container {
@@ -45,10 +32,6 @@
 
 /* viewport is less than or equal to the specified max-width */
 @media (max-width: 800px) {
-  .logo-container img {
-    margin: 30px;
-    width: 25%;
-  }
   .weather-card-container {
     display: flex;
     align-items: center;
@@ -69,19 +52,6 @@
 }
 
 /* viewport is greater than or equal to the specified min-width */
-@media (min-width: 800px) {
-  .logo-container img {
-    margin: 30px;
-    width: 25%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .logo-container img {
-    margin: 30px;
-    width: 300px;
-  }
-}
 
 .background-image {
   width: 100%;
@@ -96,26 +66,3 @@
   height: 100%;
   object-fit: fill;
 }
-
-/* .weather-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 1;
-  overflow-x: hidden;
-} */
-
-/* .cards {
-  padding-top: 100px;
-} */
-/* .back-button {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.back-button button {
-  font-size: 16px;
-} */

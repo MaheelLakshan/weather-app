@@ -1,0 +1,98 @@
+.card-media-container {
+  position: relative;
+}
+
+.card-media {
+  width: 100%;
+  height: 80%;
+}
+
+.card-name-overlay {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.card-date-overlay {
+  position: relative;
+  top: -2px;
+  /* left: 20px; */
+  font-size: 10px;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.card-temp-overlay {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  color: #fff;
+  font-size: 35px;
+}
+
+.card-close-overlay {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 12px; /* Adjust font size as needed */
+  color: #fff; /* Text color */
+}
+
+.card-temp_muchdetails-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2px;
+  position: absolute;
+  top: 80px;
+  right: 30px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 540;
+}
+
+.card-icons-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 400px) {
+  .card-name-overlay {
+    position: absolute;
+    top: 10%;
+    left: 20px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+
+  .card-temp-overlay {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    color: #fff;
+  }
+
+  .card-icons-overlay {
+    display: none;
+  }
+}

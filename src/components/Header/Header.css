@@ -1,0 +1,43 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+.logo-container img {
+  width: 30px;
+  height: 27px;
+  z-index: 2;
+}
+
+.logo-text {
+  /* Add your styling for the text here, e.g., font-size, color, margin, padding, etc. */
+  font-size: 20px;
+  color: white;
+  margin-left: 10px; /* Adjust the margin to position the text to the right of the image */
+  z-index: 2;
+}
+
+/* @media (max-width: 800px) {
+  .logo-container img {
+    margin: 30px;
+    width: 25%;
+  }
+} */
+
+/* viewport is greater than or equal to the specified min-width */
+/* @media (min-width: 800px) {
+  .logo-container img {
+    margin: 30px;
+    width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo-container img {
+    margin: 30px;
+    width: 300px;
+  }
+} */
