@@ -1,10 +1,10 @@
 import React from 'react';
 import './CardAboveContain.css';
 import { Typography } from '@mui/material';
-import * as CardConstants from '../../Constants/CardConstants'; // Import the constants here
+import * as CardConstants from '../../constants/Card_Constants'; // Import the constants here
 
 function CardAboveContain({ weatherInfo }) {
-  const { name, main, weather, dt, id, sys } = weatherInfo;
+  const { name, main, weather, dt, sys } = weatherInfo;
   const description = weather[0].description;
   const temp = Math.round(main.temp);
   const min_temp = Math.round(main.temp_min);

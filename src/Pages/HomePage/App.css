@@ -1,6 +1,7 @@
 .app-container {
   position: flex;
-  background-color: #1f2128;
+  background-image: url('../../assets/1 Dashboard - 1200px.png');
+  background-size: cover;
 }
 
 .weather-card-container-twoColumn {
@@ -12,43 +13,20 @@
   justify-content: center; /* Center the grid horizontally */
   align-items: center; /* Center the grid vertically */
   padding: 0 auto; /* Equal padding on the left and right of the container */
+  min-height: calc(100vh - 174px);
 }
 
-.background-image {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.background-image img {
+/* .background-image {
+  position: fixed;
   width: 100%;
   height: 100%;
-  object-fit: fill;
-}
+} */
 
 @media (min-width: 801px) {
-  .weather-card-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    height: 100%;
-    width: 100%;
-  }
 }
 
 /* viewport is less than or equal to the specified max-width */
 @media (max-width: 800px) {
-  .weather-card-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    height: 100%;
-    width: 100%;
-  }
   .weather-card-container-twoColumn {
     display: grid;
     margin-top: 5px;

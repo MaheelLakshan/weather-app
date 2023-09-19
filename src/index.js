@@ -2,18 +2,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './Pages/HomePage/App';
 import reportWebVitals from './reportWebVitals';
-import Router from './Routes/Route';
-import ContextWrapper from './Context/ContextWrapper';
+import Router from './routes/Route';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //Wrapping <React.StrictMode> was remove since in react 18 it was render twice. mount and Unmount. However in
 
-  <ContextWrapper>
-    <Router />
-  </ContextWrapper>
+  <Router />
 );
 
 // If you want to start measuring performance in your app, pass a function

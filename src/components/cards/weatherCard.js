@@ -1,13 +1,13 @@
 import React from 'react';
 import { Card, CardContent, CardActionArea } from '@mui/material';
-import './weatherCard.css';
-
-import CardBelowContain from '../CardBelowContain/cardBelowContain';
+import './WeatherCard.css';
+import CardBelowContain from '../CardBelowContain/CardBelowContain';
 import CardAboveContain from '../CardAboveContain/CardAboveContain';
+import { Link } from 'react-router-dom';
 
-function WeatherCard({ weatherInfo, onClick }) {
+function WeatherCard({ weatherInfo }) {
   return (
-    <Card className="background" onClick={onClick}>
+    <Card className="background" as={Link} to={`${weatherInfo.id}`}>
       <CardActionArea>
         <CardAboveContain weatherInfo={weatherInfo} />
         <CardContent style={{ background: '#383b47', margin: '-5px' }}>

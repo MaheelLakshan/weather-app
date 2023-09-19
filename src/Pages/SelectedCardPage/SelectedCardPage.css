@@ -1,20 +1,7 @@
 .selectedCardContainer {
   position: relative;
-}
-
-.backgroundImageNew {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.backgroundImageNew img {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  background-image: url('../../assets/1 Dashboard - 1200px.png');
+  background-size: cover;
 }
 
 .weather-card-container {
@@ -23,6 +10,7 @@
   justify-content: center;
   margin-top: 50px;
   height: 100%;
+  min-height: calc(100vh - 134px);
   width: 100%;
   margin-bottom: 185px;
 }

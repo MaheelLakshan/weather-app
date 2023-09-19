@@ -1,9 +1,9 @@
 import React from 'react';
-import './cardBelowContain.css';
+import './CardBelowContain.css';
 import {
   NAVIGATOR_IMAGE,
   SEPARATOR_IMAGE,
-} from '../../Constants/CardConstants';
+} from '../../constants/Card_Constants';
 
 function cardBelowContain({ weatherInfo }) {
   const { main, visibility, wind, sys } = weatherInfo;

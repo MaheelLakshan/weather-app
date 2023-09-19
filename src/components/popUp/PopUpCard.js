@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
 import './PopUpCard.css'; // Import the CSS file
-import CardBelowContain from '../CardBelowContain/cardBelowContain';
-import * as PopupConstants from '../../Constants/CardConstants';
-import GlobalContext from '../../Context/GlobalContext';
+import CardBelowContain from '../CardBelowContain/CardBelowContain';
+import * as PopupConstants from '../../constants/Card_Constants';
+import { useNavigate } from 'react-router-dom';
 
-function PopUpCard() {
-  const { selectedCardData, setSelectedCardData } = useContext(GlobalContext);
-  const { name, main, weather, sys, dt } = selectedCardData;
+function PopUpCard({ data }) {
+  const navigate = useNavigate();
+  const { name, main, weather, sys, dt } = data;
   const min_temp = Math.round(main.temp_min);
   const max_temp = Math.round(main.temp_max);
   const description = weather[0].description;
@@ -29,7 +29,7 @@ function PopUpCard() {
     hour12: true,
   });
   const handleClose = () => {
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (
@@ -37,9 +37,7 @@ function PopUpCard() {
       <Card className="card-popup" style={{ background: '#383b47' }}>
         <div className="card-media-container_Popup">
           <div className="close-button card-back-overlay">
-            <Button variant="contained" onClick={handleClose}>
-              &lt;
-            </Button>
+            <Button onClick={handleClose}>&lt;</Button>
           </div>
 
           <img
@@ -120,7 +118,7 @@ function PopUpCard() {
         </div>
 
         <CardContent>
-          <CardBelowContain weatherInfo={selectedCardData} />
+          <CardBelowContain weatherInfo={data} />
         </CardContent>
       </Card>
     </div>
