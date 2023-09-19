@@ -113,31 +113,13 @@
 
 @media (max-width: 400px) {
   .card-name-overlay_popup {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    top: 35%; /* Adjust the top value */
+    top: 20%; /* Adjust the top value */
     left: 50%; /* Adjust the left value */
-    transform: translate(-50%, -50%); /* Center the element */
-    color: #fff;
-  }
-  .card-back-overlay {
-    position: absolute;
-    top: 1px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
   }
 
   .card-temp-overlay_popup {
-    position: absolute;
-    color: #fff;
-    top: 70%; /* Adjust the top value */
-    left: 60%; /* Adjust the left value */
+    top: 50%; /* Adjust the top value */
+    left: 70%; /* Adjust the left value */
     transform: translate(-5%, -50%); /* Center the element */
   }
 
@@ -151,8 +133,12 @@
   .card-seperate-overlay_popup {
     position: absolute;
     color: #fff;
-    top: 70%; /* Adjust the top value */
+    top: 40%; /* Adjust the top value */
     left: 55%; /* Adjust the left value */
     transform: translate(-50%, -50%); /* Center the element */
+  }
+  .card-temp_muchdetails-overlay_popUp {
+    top: 70%;
+    right: 10%;
   }
 }

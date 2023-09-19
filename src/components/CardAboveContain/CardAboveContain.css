@@ -72,27 +72,50 @@
   color: #fff;
   text-align: center;
 }
-@media (max-width: 400px) {
+
+/* Make responsive */
+@media (max-width: 700px) {
   .card-name-overlay {
-    position: absolute;
     top: 10%;
     left: 20px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
+  }
+  .card-temp_muchdetails-overlay {
+    top: 70px;
+    right: 30px;
   }
 
   .card-temp-overlay {
     position: absolute;
-    top: 50%;
+    top: 20%;
     right: 30px;
     color: #fff;
   }
 
   .card-icons-overlay {
-    display: none;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-name-overlay {
+    top: 10%;
+    left: 20px;
+  }
+  .card-temp_muchdetails-overlay {
+    top: 70px;
+    right: 30px;
+  }
+
+  .card-temp-overlay {
+    position: absolute;
+    top: 20%;
+    right: 30px;
+    color: #fff;
+  }
+
+  .card-icons-overlay {
+    bottom: 15px;
+    left: 15px;
   }
 }
